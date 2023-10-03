@@ -10,8 +10,8 @@ import { ReenvioSenhaComponent } from './reenvio-senha/reenvio-senha.component';
 
 const routes: Routes = [
   {path:'vitrine', component:VitrineComponent},
-  {path:'', component:VitrineComponent},
-  {path:'detalhes', component:DetalheProdutoComponent},
+  { path: '', redirectTo: '/vitrine', pathMatch: 'full' },
+  { path: 'detalhes/:id', component: DetalheProdutoComponent },
   {path:'carrinho', component:CestaComprasComponent},
   {path:'login', component:LoginComponent},
   {path:'busca', component:PesquisaComponent},

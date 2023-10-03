@@ -9,14 +9,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="row" *ngFor="let produto of produtos">
+        <div class="row">
             <div class="col-md-5">
-                <img src=".\assets/grim1.jpg" alt="Produto" class="img-fluid">
-            </div>
+                <img [src]="produto?.imagemUrl" alt="{{ produto?.nome }}" class="img-fluid">
+            </div>  
             <div class="col-md-7">
-                <div class="font-weight-bold">{{ produto.nome }}</div>
-                <p>{{ produto.descricao }}</p>
-                <p class="font-weight-bold font-size-large">Preço: R$ {{ produto.preco.toFixed(2) }}</p>
+                <div class="font-weight-bold">{{ produto?.nome }}</div>
+                <p>{{ produto?.descricao }}</p>
+                <p class="font-weight-bold font-size-large">Preço: R$ {{ produto?.preco?.toFixed(2) }}</p>
                 <a class="btn btn-success" href="/carrinho">
                     <i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho
                 </a>

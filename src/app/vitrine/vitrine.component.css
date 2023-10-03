@@ -1,0 +1,44 @@
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .font-size-large {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  a:hover {
+    background-color: #0056b3;
+  }
+  
