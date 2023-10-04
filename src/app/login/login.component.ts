@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  senha: string = '';
+  confirmarSenha: string = '';
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  cadastroVisivel = false;
 
 }

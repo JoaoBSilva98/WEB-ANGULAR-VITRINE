@@ -8,18 +8,24 @@
     <title>Detalhes do Produto</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-md-5">
                 <img [src]="produto?.imagemUrl" alt="{{ produto?.nome }}" class="img-fluid">
             </div>  
             <div class="col-md-7">
-                <div class="font-weight-bold">{{ produto?.nome }}</div>
+                <h2 class="font-weight-bold">{{ produto?.nome }}</h2>
                 <p>{{ produto?.descricao }}</p>
                 <p class="font-weight-bold font-size-large">Preço: R$ {{ produto?.preco?.toFixed(2) }}</p>
-                <a class="btn btn-success" href="/carrinho">
+                <a class="btn btn-success" (click)="adicionarAoCarrinho()">
                     <i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho
-                </a>
+                  </a>
+                <p></p>
+                <a href="/vitrine"> Voltar
+                  </a>
+                  <div *ngIf="produtoAdicionadoAoCarrinho" class="alert alert-success mt-3">
+                    Produto adicionado ao carrinho!
+                  </div>
             </div>
         </div>
     </div>

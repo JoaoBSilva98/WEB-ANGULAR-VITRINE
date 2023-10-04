@@ -1,16 +1,17 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-6" *ngFor="let produto of produtos; let i = index">
+    <div class="row flex-container">
+        <div class="col-md-6 produto-card" *ngFor="let produto of produtos">
             <div class="card mb-4">
-                <img [src]="produto.imagemUrl" alt="{{ produto.nome }}" class="card-img-top img-fluid">
-                <div class="card-body">
-                    <h2 class="card-title">{{ produto.nome }}</h2>
+                <div class="card-body text-center">
+                    <img [src]="produto.imagemUrl" alt="{{ produto.nome }}" class="card-img-top img-fluid produto-imagem">
+                    <h2 class="card-title mt-3">{{ produto.nome }}</h2>
                     <p class="card-text font-weight-bold font-size-large">Preço: R$ {{ produto.preco.toFixed(2) }}</p>
-                    <a (click)="verDetalhes(produto.id)" class="btn btn-primary">Ver Detalhes</a>
-                    <p></p>
+                    <a (click)="verDetalhes(produto.id)" class="btn btn-primary">Ver Detalhes</a> <!-- Ignorar erro -->
                 </div>
             </div>
-            <div *ngIf="i % 2 !== 0" class="clearfix"></div>
         </div>
+    </div>
+    <div class="center-button">
+        <a routerLink="/carrinho" class="btn btn-primary">Ir para o Carrinho</a>
     </div>
 </div>

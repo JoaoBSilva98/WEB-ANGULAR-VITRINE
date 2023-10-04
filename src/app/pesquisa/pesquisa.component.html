@@ -1,1 +1,20 @@
-<p>pesquisa works!</p>
+<div class="container">
+  <div *ngIf="produtosEncontrados.length > 0">
+    <h2 class="mt-4 custom-title">Resultados da Pesquisa</h2>
+    <div class="row">
+      <div *ngFor="let produto of produtosEncontrados" class="col-md-4">
+        <div class="card mb-4 custom-card">
+          <img class="card-img-top" [src]="produto.imagemUrl" alt="{{ produto.nome }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ produto.nome }}</h5>
+            <p class="card-text">Preço: R$ {{ produto.preco }}</p>
+            <a [routerLink]="['/detalhes', produto.id]" class="btn btn-primary">Ver Detalhes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="produtosEncontrados.length === 0">
+    <p class="mt-4">Nenhum produto encontrado para a pesquisa.</p>
+  </div>
+</div>

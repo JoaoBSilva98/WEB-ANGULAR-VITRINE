@@ -5,22 +5,47 @@
   <title>Loja de Bruxaria</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./assets/mago doido.png">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="header">
     <div class="logo">
       <a href="/vitrine"> 
-        <img src=".\assets\logo.png" alt="Logo" height="40">
+        <img src=".\assets\logo.png" alt="Logo" class="logo">
       </a>
     </div>
     <div class="search-box">
-      <input type="text" class="search-input" placeholder="Buscar...">
-      <button class="search-button">Buscar</button>
+      <input type="text" class="search-input" placeholder="Buscar..." id="searchInput">
+      <button class="search-button" id="btnBuscar">Buscar</button>
+      <script>
+        document.getElementById('btnBuscar').addEventListener('click', function () {
+          realizarBusca();
+        });
+
+        document.getElementById('searchInput').addEventListener('keyup', function (event) {
+          if (event.key === 'Enter') {
+            realizarBusca();
+          }
+        });
+
+        function realizarBusca() {
+          var searchText = document.getElementById('searchInput').value;
+          if (searchText.trim() !== '') {
+            window.location.href = '/busca?query=' + encodeURIComponent(searchText);
+          }
+        }
+      </script>
     </div>
-    <div class="user-icon"></div>
+    <div class="user-icon">
+      <a href="/login">
+        <img src="./assets/cadastro.png" alt="Ícone de Cadastro" class="cadastro-icon">
+      </a>
+    </div>   
   </div>
+  <h3 class="text-center mb-3 menu-title">Menu</h3>
+  <hr class="mb-3">
   <app-root></app-root>
 </body>
 </html>

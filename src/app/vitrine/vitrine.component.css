@@ -1,44 +1,89 @@
-
 .container {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
 
-  .img-fluid {
-    max-width: 100%;
-    height: auto;
+.produto-card {
+  background-color: #000000 !important;
+  color: #ffffff;
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  margin: 10px;
+  max-width: 250px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: goldenrod;
+}
+
+p {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #000;
+}
+
+.font-size-large {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  background-color: goldenrod;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #c0a40c;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col-md-6 {
+  flex: 0 0 calc(50% - 15px); 
+  margin-bottom: 30px; 
+}
+
+.produto-imagem {
+  width: 250px;
+  height: 250px; 
+}
+
+body,
+.produto-card {
+  background-color: #000000 !important;
+  color: #ffffff;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 calc(100% - 15px);
   }
-  
-  h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  p {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  .font-size-large {
-    font-size: 18px;
-    margin-top: 10px;
-  }
-  
-  a {
-    text-decoration: none;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  a:hover {
-    background-color: #0056b3;
-  }
-  
+}

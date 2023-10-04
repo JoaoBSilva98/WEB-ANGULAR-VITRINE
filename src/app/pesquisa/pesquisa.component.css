@@ -1,0 +1,53 @@
+.custom-card {
+    background-color: #000;
+    color: goldenrod;
+    border: 1px solid #ffd700;
+  }
+  
+  .custom-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .custom-card .card-title {
+    font-size: 18px;
+  }
+  
+  .custom-card .card-text {
+    font-size: 16px;
+  }
+  
+  .custom-card .btn-primary {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    font-weight: bold;
+  }
+  
+  .custom-card .btn-primary:hover {
+    background-color: #c0a40c;
+  }
+  
+  .custom-title {
+    color: goldenrod;
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .custom-card {
+      margin-bottom: 10px;
+    }
+  
+    .custom-card .card-title {
+      font-size: 16px;
+    }
+  
+    .custom-card .card-text {
+      font-size: 14px;
+    }
+  
+    .custom-title {
+      font-size: 20px;
+    }
+  }

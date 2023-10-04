@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DetalheProduto } from './detalhe-produto.model';
+import { CarrinhoService } from '../carrinho.service';
 
 @Component({
   selector: 'app-detalhe-produto',
@@ -12,21 +13,34 @@ export class DetalheProdutoComponent implements OnInit {
   produtos: DetalheProduto[] = [
     new DetalheProduto(1, "Grimório Sol", 217.15, "Um grimório poderoso que pode chamar luz nas noites mais escuras, ou só servir para uma boa leitura.", "./assets/grim1.jpg"),
     new DetalheProduto(2, "Grimório Lua", 215.17, "Um grimório contendo conhecimento da noite, ou será que não.", "./assets/grim2.jpg"),
+    new DetalheProduto(3, "Necronomicom", 666.66,"Um livro maldito, dito como proibido, serve de peso de papel", "./assets/grim3.png"),
+    new DetalheProduto(4,"Grimório de Invocação", 1350.0, 
+    "Aqui tem feitiços de invocação de vários tipos de familiares, o primeiro feitiço ensina a invocar gatos com o feitiço 'PssPssPss'", "./assets/grim4.png"),
   ];
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private carrinhoService: CarrinhoService
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const id = +params['id'];
-      console.log('ID:', id);
       this.produto = this.produtos.find(p => p.id === id);
-      console.log('Produto:', this.produto);
-      if (!this.produto) {
-        this.router.navigate(['/pagina-de-erro']);
-      }
     });
   }
+
+  produtoAdicionadoAoCarrinho: boolean = false;
+  adicionarAoCarrinho() {
+    if (this.produto) {
+      this.carrinhoService.adicionarItem(this.produto);
+      this.produtoAdicionadoAoCarrinho = true;
   
-  
+      
+      setTimeout(() => {
+        this.produtoAdicionadoAoCarrinho = false;
+      }, 3000); 
+    }
+  }
 }
