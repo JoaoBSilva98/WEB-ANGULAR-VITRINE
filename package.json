@@ -1,6 +1,6 @@
 {
   "name": "web06",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -35,5 +35,9 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.1.3"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.",
+  "main": "index.js",
+  "author": "João Barbosa",
+  "license": "ISC"
 }

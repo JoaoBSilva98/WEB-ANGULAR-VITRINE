@@ -1,22 +1,22 @@
-<div class="container mt-5">
+<div class="container mt-5" style="color:goldenrod">
     <h2>Itens no Carrinho</h2>
     <div class="table-responsive">  
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Produto</th>
-                    <th>Quantidade</th>
-                    <th>Preço Total</th>
-                    <th>Ações</th>
+                    <th class="blackgold">Produto</th>
+                    <th class="blackgold">Quantidade</th>
+                    <th class="blackgold">Preço Total</th>
+                    <th class="blackgold">Ações</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item of carrinhoService.getItensCarrinhoObservable() | async">
-                    <td>{{ item.produto.nome }}</td>
-                    <td>{{ item.quantidade }}</td>
-                    <td>R$ {{ item.produto.preco * item.quantidade | number:'1.2-2' }}</td>
-                    <td>
-                        <button class="btn btn-danger" (click)="carrinhoService.removerItem(item.produto)">Remover</button>
+                    <td class="blackgold">{{ item.produto.nome }}</td>
+                    <td class="blackgold">{{ item.quantidade }}</td>
+                    <td class="blackgold">R$ {{ item.produto.preco * item.quantidade | number:'1.2-2' }}</td>
+                    <td class="blackgold">
+                        <button class="btn btn-danger"  (click)="carrinhoService.removerItem(item.produto) ">Remover</button>
                     </td>
                 </tr>
             </tbody>
@@ -29,7 +29,6 @@
     
     <div class="mt-3"></div>
     
-    <!-- Botão para compra finalizada com margem superior -->
     <button class="btn btn-success mt-3" (click)="compraFinalizada()">Compra Finalizada</button>
     
     <div class="mt-3"></div>
